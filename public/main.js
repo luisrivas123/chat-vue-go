@@ -24,13 +24,3 @@ new Vue({
       }
     }
 })
-
-// let msg = {
-//     name: "jhjhjk",
-//     lastName: "kjkjlk"
-// }
-
-// socket.on('some:event', function (msg, sendAckCb) {
-//     //Sending ACK with data to server after receiving some:event from server
-//     sendAckCb(JSON.stringify(data)); // for example used serializing to JSON
-// })
