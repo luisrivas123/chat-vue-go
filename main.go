@@ -9,22 +9,14 @@ import (
 )
 
 func main() {
-	// Inicializar el servidor
+	
+	// Inicializar el servidor 
 	server := socketio.NewServer(nil)
+	
+	// SOCKETS
 
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-
-	// sockets
-	// Eventos del lado del client
-
-	// Sever cuando ocurra un evento de conexión
-	// Gauarda los datos del cliente conectado en la variable so
-
-	// server.On("connection", func (so socketio.Socket) {
-	// 	log.Println("A new user connected")
-	// })
+	// Cuando ocurra un evento de conexión
+	// Gauarda los datos del cliente conectado en la variable s
 
 	server.OnConnect("/", func(s socketio.Conn) error {
 		s.SetContext("")
@@ -32,17 +24,17 @@ func main() {
 		fmt.Println("connected:", s.ID())
 
 		return nil
-
-		// s.OnEvent("chat message", func (msg string)  {
-		// 	log.Println(msg)
-		// })
 	})
 
+	// Escucha el evento "chat message"
 	server.OnEvent("/", "chat message", func(s socketio.Conn, msg string) {
 		fmt.Println("chat message:", msg)
 		// s.Emit("reply", msg, "chat_room")
 		server.BroadcastToRoom("", "chat_room", "reply", msg)
-		// s.BroadcastTo("chat_room", "chat message", msg)
+	})
+
+	server.OnError("/", func(s socketio.Conn, e error) {
+		fmt.Println("meet error:", e)
 	})
 
 	go server.Serve()
