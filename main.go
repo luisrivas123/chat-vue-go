@@ -29,6 +29,7 @@ func main() {
 	server.OnConnect("/", func(s socketio.Conn) error {
 		s.SetContext("")
 		fmt.Println("connected:", s.ID())
+		s.Join("chat_room")
 		return nil
 
 		// s.OnEvent("chat message", func (msg string)  {
@@ -38,7 +39,8 @@ func main() {
 
 	server.OnEvent("/", "chat message", func(s socketio.Conn, msg string) {
 		fmt.Println("chat message:", msg)
-		s.Emit("reply", "have "+msg)
+		s.Emit("reply", msg)
+		// s.BroadcastTo("chat_room", "reply", msg)
 	})
 
 	go server.Serve()

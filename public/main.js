@@ -5,7 +5,7 @@ var socket = io();
 new Vue({
   el: '#chat-app',
     created() {
-      socket.on("chat message", (message) => {
+      socket.on("reply", (message) => {
         console.log(message)
         this.messages.push({
           text: message,
