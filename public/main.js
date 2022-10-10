@@ -1,6 +1,4 @@
-// const socket = io();
-
-var socket = io();
+const socket = io();
 
 new Vue({
   el: '#chat-app',
