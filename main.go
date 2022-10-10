@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"github.com/googollee/go-socket.io"
+
+	socketio "github.com/googollee/go-socket.io"
 )
 
 func main() {
@@ -31,5 +32,5 @@ func main() {
 	http.Handle("/", http.FileServer(http.Dir("./public")))
 	log.Println("Server on port 3000")
 	log.Fatal(http.ListenAndServe(":3000", nil))
-	
+
 }
