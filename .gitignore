@@ -15,4 +15,5 @@
 # vendor/
 
 #
-.txt
+*.txt
+chat-go-vue.txt

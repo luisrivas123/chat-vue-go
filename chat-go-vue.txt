@@ -1,9 +1,16 @@
 app chat go vue
 
-// Libreria gi SOCKET.IO
+// Libreria go SOCKET.IO
 
 https://github.com/googollee/go-socket.io
 
+go: added github.com/gofrs/uuid v4.0.0+incompatible
+go: added github.com/gomodule/redigo v1.8.4
+go: added github.com/googollee/go-socket.io v1.6.2
+go: added github.com/gorilla/websocket v1.4.2
+
+// Libreria go socket client
+https://github.com/hesh915/go-socket.io-client
 
 // cdns
 

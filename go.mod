@@ -9,5 +9,7 @@ require (
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/keegancsmith/rpc v1.1.0 // indirect
 	github.com/stamblerre/gocode v1.0.0 // indirect
+	github.com/zhouhui8915/engine.io-go v0.0.0-20150910083302-02ea08f0971f // indirect
+	github.com/zhouhui8915/go-socket.io-client v0.0.0-20200925034401-83ee73793ba4 // indirect
 	golang.org/x/tools v0.0.0-20191030062658-86caa796c7ab // indirect
 )
